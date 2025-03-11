@@ -76,8 +76,8 @@ MonoBehaviour:
   crouchSpeed: 2
   lookSpeedX: 2
   lookSpeedY: 2
-  minY: -60
-  maxY: 60
+  minY: -90
+  maxY: 90
   cam: {fileID: 1178336634706178418}
   crouchHeight: 0.5
   standHeight: 2

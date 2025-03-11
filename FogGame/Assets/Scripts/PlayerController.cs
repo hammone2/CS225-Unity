@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     // Mouse Look
     public float lookSpeedX = 2f;
     public float lookSpeedY = 2f;
-    public float minY = -60f;
-    public float maxY = 60f;
+    public float minY = -90f;
+    public float maxY = 90f;
 
     // Camera variables
     private float rotationX = 0f;
