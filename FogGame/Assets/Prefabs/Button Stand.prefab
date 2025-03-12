@@ -181,10 +181,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5324482425534391047}
+  - component: {fileID: 3185260887375957365}
   - component: {fileID: 3728257236721181606}
   - component: {fileID: 5323407891346938085}
   - component: {fileID: 2173764004760208424}
-  - component: {fileID: 3185260887375957365}
   m_Layer: 0
   m_Name: Button Stand
   m_TagString: Untagged
@@ -201,13 +201,32 @@ Transform:
   m_GameObject: {fileID: 8466926359418184841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.534, y: 0.5, z: 0.508}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.5, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2388548243115324492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3185260887375957365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466926359418184841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a5f1bef81f9364d9ebe973e1f9c570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isToggle: 0
+  <OnActivate>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnDeactivate>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &3728257236721181606
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -283,22 +302,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3185260887375957365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466926359418184841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a5f1bef81f9364d9ebe973e1f9c570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_isToggle: 0
-  <OnActivate>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnDeactivate>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[SelectionBase]
 public class Button : MonoBehaviour, IActivator
 {
     [SerializeField] bool m_isToggle = false;
