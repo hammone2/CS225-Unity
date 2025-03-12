@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
     public float maxY = 90f;
 
     //Interactivity
-    public float raycastDistance = 10f;
+    public float raycastDistance = 2f;
     public LayerMask layerMask;
+    public GameObject hand;
+    public bool isHoldingObject = false;
 
     // Camera variables
     private float rotationX = 0f;
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         currentHeight = standHeight;
+
+        GameManager.player = this;
     }
 
     private void Update()
@@ -67,13 +71,9 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, raycastDistance, layerMask))
             {
-                if (hit.collider.CompareTag("Interactable"))
-                {
-                    Debug.Log("Hit an interactable object: " + hit.collider.name);
-                }
-
                 if (hit.collider.gameObject.GetComponent<InteractableObject>())
                 {
+                    Debug.Log("Hit an interactable object: " + hit.collider.name);
                     hit.collider.gameObject.GetComponent<InteractableObject>().InteractedWith();
                 }
             }
