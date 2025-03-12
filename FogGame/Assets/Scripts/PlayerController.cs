@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     public float minY = -90f;
     public float maxY = 90f;
 
+    //Interactivity
+    public float raycastDistance = 10f;
+    public LayerMask layerMask;
+
     // Camera variables
     private float rotationX = 0f;
 
@@ -54,6 +58,26 @@ public class PlayerController : MonoBehaviour
 
         // Jumping and Gravity
         JumpAndGravity();
+
+        //Interactivity
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, raycastDistance, layerMask))
+            {
+                if (hit.collider.CompareTag("Interactable"))
+                {
+                    Debug.Log("Hit an interactable object: " + hit.collider.name);
+                }
+
+                if (hit.collider.gameObject.GetComponent<InteractableObject>())
+                {
+                    hit.collider.gameObject.GetComponent<InteractableObject>().InteractedWith();
+                }
+            }
+        }
     }
 
     private void MouseLook()
