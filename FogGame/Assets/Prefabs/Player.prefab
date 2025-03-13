@@ -83,7 +83,7 @@ MonoBehaviour:
   raycastDistance: 2
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   hand: {fileID: 3134289030463204859}
   isHoldingObject: 0
   cam: {fileID: 1178336634706178418}
@@ -137,7 +137,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.7
-  m_Height: 2
+  m_Height: 2.17
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3134289030463204859
