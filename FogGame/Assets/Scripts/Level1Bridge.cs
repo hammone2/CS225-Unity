@@ -13,8 +13,6 @@ public class Level1Bridge : MonoBehaviour
 
         float newRotationX = Mathf.MoveTowardsAngle(transform.rotation.eulerAngles.x, targetRotationX, rotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(newRotationX, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-
-        //put something here later to stop this code. I tried checking if the x rotation was 0 and it broke the bridge
     }
 
     public void Extend()

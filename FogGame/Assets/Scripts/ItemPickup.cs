@@ -47,6 +47,6 @@ public class ItemPickup : MonoBehaviour
     {
         if (!pickedUp)
             return;
-        transform.position = GameManager.player.hand.transform.position;
+        transform.position = Vector3.MoveTowards(transform.position, GameManager.player.hand.transform.position, 5 * Time.deltaTime);
     }
 }
