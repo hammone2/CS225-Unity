@@ -31,8 +31,6 @@ public class Level1Gate : MonoBehaviour
 
                 transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
-                Debug.Log(transform.position.y);
-
                 if (newY >= closedHeight)
                     currentState = GateState.DONE;
                 break;
@@ -41,8 +39,6 @@ public class Level1Gate : MonoBehaviour
                 newY = Mathf.MoveTowards(newY, openHeight, speed * Time.deltaTime);
 
                 transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-                Debug.Log(transform.position.y);
 
                 if (newY <= openHeight)
                     currentState = GateState.DONE;
