@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.48787057, g: 0.48787057, b: 0.48787057, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.12941177, g: 0.26666668, b: 0.37254903, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.04
+  m_FogDensity: 0.024
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -858,8 +858,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.33
+  m_Color: {r: 0.2942328, g: 0.3621636, b: 0.3962264, a: 1}
+  m_Intensity: 0.11
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -960,6 +960,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
       propertyPath: field of view
       value: 60.000004
       objectReference: {fileID: 0}
@@ -968,12 +972,28 @@ PrefabInstance:
       value: 20.78461
       objectReference: {fileID: 0}
     - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.10980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178336634706178418, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2538482470323924390, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447717605108328316, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
+      propertyPath: m_VolumeFrameworkUpdateModeOption
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5604647475106534622, guid: ac5537c6fd292044194bf105d57777e0, type: 3}
       propertyPath: m_LocalPosition.x
