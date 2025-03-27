@@ -1,12 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     public void OnNewGameButtonPressed()
     {
-        //put new save code here
-        SceneManager.LoadScene("Level1");
+        SaveManager.NewSave();
+    }
+    public void OnLoadGameButtonPressed()
+    {
+        SaveManager.Load();
     }
 
     public void OnQuitButtonPressed()

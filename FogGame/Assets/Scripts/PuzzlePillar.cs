@@ -13,7 +13,7 @@ public class PuzzlePillar : MonoBehaviour
 
     private void Awake()
     {
-        transform.rotation = Quaternion.Euler(0, 120 * currentFace + m_offsetRotation, 0);
+        transform.localRotation = Quaternion.Euler(0, 120 * currentFace + m_offsetRotation, 0);
     }
 
     public void Activate()
@@ -28,13 +28,13 @@ public class PuzzlePillar : MonoBehaviour
         if (currentFace > 2) currentFace = 0;
 
         float timeRotating = m_rotateTime;
-        Quaternion start = transform.rotation;
-        Quaternion target = Quaternion.Euler(0, transform.eulerAngles.y + 120, 0);
+        Quaternion start = transform.localRotation;
+        Quaternion target = Quaternion.Euler(0, transform.localRotation.eulerAngles.y + 120, 0);
         m_isRotating = true;
         while (timeRotating > 0)
         {
             timeRotating -= Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(start, target, 1 - (timeRotating / m_rotateTime));
+            transform.localRotation = Quaternion.Lerp(start, target, 1 - (timeRotating / m_rotateTime));
             yield return new WaitForEndOfFrame();
         }
         m_isRotating = false;

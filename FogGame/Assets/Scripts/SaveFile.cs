@@ -42,7 +42,7 @@ public class SaveFile
     /// The save file constructor.
     /// </summary>
     /// <param name="sceneIndex">The index of the first level.</param>
-    public SaveFile(string fileName, int sceneIndex = 1)
+    public SaveFile(string fileName, int sceneIndex = 0)
     {
         this.fileName = fileName;
 
@@ -52,9 +52,20 @@ public class SaveFile
         //Load existing save
         if (File.Exists(FilePath))
         {
-            file = File.OpenRead(FilePath);
-            SaveFile loadedSave = bf.Deserialize(file) as SaveFile;
-            this.sceneIndex = loadedSave.sceneIndex;
+            if (sceneIndex != 0)
+            {
+                File.Delete(FilePath);
+                Debug.Log("Save file deleted");
+                this.sceneIndex = sceneIndex;
+                file = File.Create(FilePath);
+                bf.Serialize(file, this);
+            }
+            else
+            {
+                file = File.OpenRead(FilePath);
+                SaveFile loadedSave = bf.Deserialize(file) as SaveFile;
+                this.sceneIndex = loadedSave.sceneIndex;
+            }
         }
         else
         {
@@ -63,17 +74,5 @@ public class SaveFile
             bf.Serialize(file, this);
         }
         file.Close();
-    }
-
-    /// <summary>
-    /// The save file destructor.
-    /// </summary>
-    ~SaveFile()
-    {
-        if (File.Exists(FilePath))
-        {
-            File.Delete(FilePath);
-        }
-        Debug.Log("Save file deleted");
     }
 }

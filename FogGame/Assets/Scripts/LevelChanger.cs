@@ -11,6 +11,7 @@ public class LevelChanger : MonoBehaviour
         {
             Debug.Log("Loaded new scene: " + levelToSwitch);
             SceneManager.LoadScene(levelToSwitch);
+            SaveManager.Save();
         }
     }
 }
