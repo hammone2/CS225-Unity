@@ -392,6 +392,7 @@ MonoBehaviour:
   openPos: 45.6
   closedPos: 57.88
   speed: 10
+  deactivationTime: 14
 --- !u!1 &343339065
 GameObject:
   m_ObjectHideFlags: 0
