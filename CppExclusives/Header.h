@@ -3,8 +3,10 @@
 using namespace std;
 
 class Object{
+protected:
+	string data;
 public:
-	string data = "Object created in c++ because C# doesn't have headers.";
+	virtual void DisplayData() = 0;
 	Object();
 	~Object();
 };
