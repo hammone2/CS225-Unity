@@ -30,7 +30,7 @@ public class SaveFile
             file = File.OpenWrite(save.FilePath);
         }
         else
-            file = File.Create(save.FilePath);
+            throw new Exception("File not found.");
 
         bf.Serialize(file, save);
 
