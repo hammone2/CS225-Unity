@@ -108,7 +108,26 @@ public class PlayerController : MonoBehaviour
 
     private void JumpAndGravity()
     {
-        if (characterController.isGrounded)
+        // Cast a ray down from the center of the character's controller
+        RaycastHit hit;
+        float angle = 0f;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 5f))
+        {
+            // Calculate the slope angle using the normal of the surface hit
+            angle = Vector3.Angle(hit.normal, Vector3.up);
+
+            // Display the angle for testing purposes
+            Debug.Log("Slope Angle: " + angle);
+
+            // You can also use the angle for custom logic (e.g., limiting movement on steep slopes)
+            if (angle > characterController.slopeLimit)
+            {
+                Debug.Log("Too steep!");
+            }
+        }
+        
+        
+        if (characterController.isGrounded && angle <= characterController.slopeLimit)
         {
             if (Input.GetButtonDown("Jump"))
             {
