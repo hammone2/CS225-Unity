@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Movement
+    //movement
     public float walkSpeed = 5f;
     public float sprintSpeed = 8f;
     public float crouchSpeed = 2f;
 
-    // Mouse Look
+    //mouse settings
     public float lookSpeedX = 2f;
     public float lookSpeedY = 2f;
     public float minY = -90f;
@@ -21,20 +21,20 @@ public class PlayerController : MonoBehaviour
     public GameObject hand;
     public bool isHoldingObject = false;
 
-    // Camera variables
+    //camera rotation
     private float rotationX = 0f;
 
-    // Character Controller
+    //controller
     private CharacterController characterController;
     public Camera cam;
 
-    // Crouching
+    //crouch settings
     private bool isCrouching = false;
     public float crouchHeight = 0.5f;
     public float standHeight = 2f;
     private float currentHeight;
 
-    // Jumping
+    //jump settings
     public float jumpHeight = 2f;
     private float gravity = -9.8f;
     private Vector3 velocity;
@@ -51,16 +51,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Mouse Look
+        //Movement
         MouseLook();
-
-        // Movement
         Move();
-
-        // Crouch
         HandleCrouch();
-
-        // Jumping and Gravity
         JumpAndGravity();
 
         //Interactivity
@@ -94,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        float moveDirectionY = velocity.y; // Keep vertical speed (gravity/jumping)
+        float moveDirectionY = velocity.y;
 
         float moveDirectionX = Input.GetAxis("Horizontal") * (isCrouching ? crouchSpeed : (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed));
         float moveDirectionZ = Input.GetAxis("Vertical") * (isCrouching ? crouchSpeed : (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed));
@@ -108,18 +102,13 @@ public class PlayerController : MonoBehaviour
 
     private void JumpAndGravity()
     {
-        // Cast a ray down from the center of the character's controller
         RaycastHit hit;
         float angle = 0f;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 5f))
         {
-            // Calculate the slope angle using the normal of the surface hit
             angle = Vector3.Angle(hit.normal, Vector3.up);
-
-            // Display the angle for testing purposes
             Debug.Log("Slope Angle: " + angle);
 
-            // You can also use the angle for custom logic (e.g., limiting movement on steep slopes)
             if (angle > characterController.slopeLimit)
             {
                 Debug.Log("Too steep!");
